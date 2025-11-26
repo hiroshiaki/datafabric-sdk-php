@@ -33,11 +33,14 @@ auto-tag:
   stage: tag
   image: alpine:latest
   before_script:
-    - apk add --no-cache git curl jq
+    - apk add --no-cache git curl jq bash
     - git config user.email "ci@hiroshiaki.com"
     - git config user.name "GitLab CI"
   script:
     - |
+      #!/bin/bash
+      set -e
+      
       # Get the latest tag
       LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
       echo "Latest tag: $LATEST_TAG"
@@ -65,6 +68,7 @@ auto-tag:
       else
         echo "No version bump trigger found in commit message. Skipping tag creation."
         echo "Use prefixes: breaking:/major:, feat:/feature:/minor:, fix:/patch:/chore:/docs:"
+        touch tag.env
         exit 0
       fi
       
