@@ -45,24 +45,55 @@ git push origin v1.0.0
 
 ## Step 4: Configure Auto-Update Webhook
 
-### For GitLab
+### For GitLab (IMPORTANT - Required for Auto-Updates)
 
-1. Go to your GitLab project: Settings > Integrations
-2. Find "Packagist" integration or add a webhook
-3. Enter webhook URL:
-   ```
-   https://packagist.org/api/update-package?username=YOUR_PACKAGIST_USERNAME&apiToken=YOUR_API_TOKEN
-   ```
-4. Get your API token from: https://packagist.org/profile/
-5. Configure webhook to trigger on "Push events" and "Tag push events"
+#### Option A: Built-in Packagist Integration (Recommended)
 
-### Manual Webhook Setup
+1. Go to your GitLab project: **Settings → Integrations**
+2. Look for "Packagist" in the integrations list
+3. If available, configure:
+   - **Username**: Your Packagist username
+   - **API Token**: Get from https://packagist.org/profile/
+   - Enable triggers: ✅ Push events, ✅ Tag push events
+4. Click "Save changes"
+5. Test the integration using the "Test" button
 
-If automatic setup doesn't work, configure manually:
+#### Option B: Manual Webhook Setup
 
-**URL**: `https://packagist.org/api/update-package?username=YOUR_USERNAME&apiToken=YOUR_TOKEN`
-**Method**: POST
-**Trigger**: Push events, Tag push events
+If the built-in integration isn't available:
+
+1. Go to: **Settings → Webhooks** (or Settings → Integrations → Add new webhook)
+2. Configure:
+   - **URL**: `https://packagist.org/api/update-package?username=YOUR_PACKAGIST_USERNAME&apiToken=YOUR_API_TOKEN`
+   - **Trigger**: ✅ Push events, ✅ Tag push events
+   - **Enable SSL verification**: ✅ Enabled
+3. Click "Add webhook"
+4. Test by clicking "Test" → "Push events"
+
+**Get your API token**: https://packagist.org/profile/ → "Show API Token"
+
+**Example URL**:
+```
+https://packagist.org/api/update-package?username=johndoe&apiToken=abc123def456
+```
+
+### Verify Webhook Works
+
+After setup, test it:
+
+```bash
+# Make a small change
+echo "# Test update" >> README.md
+git add README.md
+git commit -m "test: webhook trigger"
+git push origin main
+```
+
+Then check:
+1. GitLab: Settings → Webhooks → Recent Deliveries (should show 200 OK)
+2. Packagist: Your package page should update within 1-2 minutes
+
+**Without this webhook, you must manually update on Packagist after each push!**
 
 ## Step 5: Verify Installation
 
@@ -178,10 +209,29 @@ public function oldMethod() { }
 
 ### Webhook Not Working
 
-- Check webhook URL includes username and API token
-- Verify webhook is enabled in GitLab
-- Check webhook delivery logs in GitLab
-- Manually trigger update on Packagist
+**Check webhook configuration:**
+- Verify webhook URL includes your correct Packagist username and API token
+- Ensure webhook is enabled in GitLab (Settings → Webhooks)
+- Check webhook Recent Deliveries in GitLab for error messages
+- Verify triggers are enabled: Push events and Tag push events
+- Confirm SSL verification is enabled
+
+**Test the webhook:**
+```bash
+# In GitLab: Settings → Webhooks → Click "Test" → "Push events"
+# Should return 200 OK
+```
+
+**Check Packagist status:**
+- Go to your package page on Packagist
+- Look for last update timestamp
+- Manually trigger: Click "Update" button if webhook failed
+
+**Common issues:**
+- API token expired: Generate new token on Packagist
+- Wrong username: Must match your Packagist account exactly
+- Network/firewall blocking GitLab → Packagist communication
+- Repository not public: Ensure GitLab repo is accessible
 
 ### Invalid composer.json
 
