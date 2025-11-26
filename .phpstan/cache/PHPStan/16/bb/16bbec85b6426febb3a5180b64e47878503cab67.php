@@ -1,0 +1,7 @@
+<?php declare(strict_types = 1);
+
+// variadic-method-DataFabric\SDK\KycClient-isTestMode-/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycClient.php
+return \PHPStan\Cache\CacheItem::__set_state(array(
+   'variableKey' => '1764141704-v4',
+   'data' => false,
+));

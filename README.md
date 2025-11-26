@@ -1,52 +1,467 @@
-# Datafabric SDK PHP
+# DataFabric PHP SDK
 
+[![Latest Version](https://img.shields.io/packagist/v/hiroshiaki/datafabric-sdk-php.svg?style=flat-square)](https://packagist.org/packages/hiroshiaki/datafabric-sdk-php)
+[![License](https://img.shields.io/packagist/l/hiroshiaki/datafabric-sdk-php.svg?style=flat-square)](LICENSE)
+[![PHP Version](https://img.shields.io/packagist/php-v/hiroshiaki/datafabric-sdk-php.svg?style=flat-square)](https://packagist.org/packages/hiroshiaki/datafabric-sdk-php)
 
+Official PHP SDK for the DataFabric API. Integrate KYC verification, maps, routing, and more into your PHP applications.
 
-## Getting started
+## Features
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- **KYC Verification** - Identity verification and document checks
+- **Easy Integration** - Simple, intuitive API
+- **PSR-4 Autoloading** - Modern PHP standards
+- **Fully Typed** - PHP 8.0+ with type declarations
+- **Test & Live Modes** - Separate environments for development and production
+- **Comprehensive Error Handling** - Custom exceptions with detailed messages
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Requirements
 
-## Add your files
+- PHP 8.0 or higher
+- Composer
+- ext-json (typically included with PHP)
+- GuzzleHTTP 7.0 or higher
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+## Installation
 
+Install via Composer:
+
+```bash
+composer require hiroshiaki/datafabric-sdk-php
 ```
-cd existing_repo
-git remote add origin https://gitlab.hiroshiaki.com:8886/hiroshi-aki/datafabric-sdk-php.git
-git branch -M main
-git push -uf origin main
+
+## Quick Start
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+use DataFabric\SDK\KycClient;
+use DataFabric\SDK\KycException;
+
+// Initialize the client with your API key
+$client = new KycClient('dfb_test_your_api_key_here');
+
+try {
+    // Create a KYC check
+    $response = $client->createCheck([
+        'first_name' => 'John',
+        'last_name' => 'Doe',
+        'date_of_birth' => '1990-05-15',
+        'document_type' => 'passport',
+        'document_number' => 'AB123456'
+    ]);
+    
+    echo "Check ID: " . $response->getCheckId() . "\n";
+    echo "Status: " . $response->getStatus() . "\n";
+    
+    if ($response->isApproved()) {
+        echo "✅ Verification approved!\n";
+    }
+    
+} catch (KycException $e) {
+    echo "Error: " . $e->getMessage() . "\n";
+}
 ```
 
-## Integrate with your tools
+## Configuration
 
-- [ ] [Set up project integrations](https://gitlab.hiroshiaki.com:8886/hiroshi-aki/datafabric-sdk-php/-/settings/integrations)
+### API Keys
 
-## Collaborate with your team
+Get your API keys from the [DataFabric Dashboard](https://datafabric.hiroshiaki.com):
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+- **Test keys**: `dfb_test_*` - Use for development and testing (no charges)
+- **Live keys**: `dfb_live_*` - Use for production
 
-## Test and Deploy
+```php
+// Test mode
+$client = new KycClient('dfb_test_abc123...');
 
-Use the built-in continuous integration in GitLab.
+// Production mode
+$client = new KycClient('dfb_live_xyz789...');
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### Custom Configuration
 
-***
+```php
+// Custom base URL (e.g., for local development)
+$client = new KycClient(
+    'dfb_test_abc123',
+    'http://localhost:8000'
+);
 
-# Editing this README
+// Custom Guzzle options
+$client = new KycClient(
+    'dfb_test_abc123',
+    'https://datafabric.hiroshiaki.com',
+    [
+        'timeout' => 60,
+        'connect_timeout' => 10,
+        'verify' => true
+    ]
+);
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+## Usage
+
+### Create KYC Check
+
+Create a new identity verification check:
+
+```php
+$response = $client->createCheck([
+    'first_name' => 'Jane',
+    'last_name' => 'Smith',
+    'date_of_birth' => '1985-08-20',
+    'document_type' => 'drivers_license',
+    'document_number' => 'DL9876543',
+    
+    // Optional fields
+    'user_reference' => 'user_12345',
+    'country' => 'US',
+    'email' => 'jane@example.com',
+    'phone' => '+1234567890',
+    'address' => [
+        'street' => '456 Oak Ave',
+        'city' => 'San Francisco',
+        'state' => 'CA',
+        'postal_code' => '94102',
+        'country' => 'US'
+    ],
+    'webhook_url' => 'https://your-app.com/webhooks/kyc',
+    'metadata' => ['order_id' => 'ORD-123']
+]);
+
+echo $response->getCheckId();
+```
+
+#### Required Fields
+
+- `first_name` - First name
+- `last_name` - Last name
+- `date_of_birth` - Date of birth (YYYY-MM-DD format)
+- `document_type` - One of: `passport`, `drivers_license`, `national_id`, `residence_permit`
+- `document_number` - Document number
+
+### Get Check Status
+
+Retrieve the status of an existing check:
+
+```php
+$response = $client->getCheck('chk_abc123...');
+
+echo "Status: " . $response->getStatus() . "\n";
+echo "Result: " . $response->getResult() . "\n";
+echo "Risk Score: " . $response->getRiskScore() . "\n";
+
+// Check status helpers
+if ($response->isCompleted()) {
+    if ($response->isApproved()) {
+        echo "✅ Approved\n";
+    } elseif ($response->isRejected()) {
+        echo "❌ Rejected\n";
+    } elseif ($response->requiresReview()) {
+        echo "⚠️ Requires manual review\n";
+    }
+}
+```
+
+#### Status Values
+
+- `pending` - Check is queued
+- `in_progress` - Currently processing
+- `completed` - Processing finished
+- `failed` - Processing failed (can be reprocessed)
+
+#### Result Values (when completed)
+
+- `approved` - Identity verified, low risk
+- `rejected` - Failed verification
+- `review_required` - Manual review needed
+
+#### Risk Scores
+
+- `low` - All checks passed
+- `medium` - Minor issues detected
+- `high` - Significant risk factors
+
+### List Checks
+
+List checks with optional filtering:
+
+```php
+$response = $client->listChecks([
+    'status' => 'completed',
+    'result' => 'approved',
+    'per_page' => 50
+]);
+
+foreach ($response->getChecks() as $check) {
+    echo $check->getCheckId() . ": " . $check->getResult() . "\n";
+}
+
+echo "Total: " . $response->getTotal() . "\n";
+echo "Page: " . $response->getCurrentPage() . " of " . $response->getLastPage() . "\n";
+
+if ($response->hasMorePages()) {
+    echo "More pages available\n";
+}
+```
+
+### Reprocess Failed Check
+
+Retry a failed check:
+
+```php
+$response = $client->reprocessCheck('chk_abc123...');
+echo "New status: " . $response->getStatus() . "\n";
+```
+
+## Response Objects
+
+### KycCheckResponse
+
+Single check response with helper methods:
+
+```php
+$response->getCheckId()              // string - Check ID
+$response->getStatus()               // string - pending|in_progress|completed|failed
+$response->getResult()               // string|null - approved|rejected|review_required
+$response->getRiskScore()            // string|null - low|medium|high
+$response->getVerificationDetails()  // array - Detailed verification results
+$response->getRequestId()            // string|null - Request ID for support
+
+// Helper methods
+$response->isApproved()              // bool
+$response->isRejected()              // bool
+$response->requiresReview()          // bool
+$response->isPending()               // bool
+$response->isCompleted()             // bool
+
+// Data export
+$response->toArray()                 // array
+$response->toJson()                  // string
+$response->getRawData()              // array
+```
+
+### KycCheckListResponse
+
+Paginated list of checks:
+
+```php
+$response->getChecks()               // KycCheckResponse[] - Array of checks
+$response->getTotal()                // int - Total number of checks
+$response->getPerPage()              // int - Checks per page
+$response->getCurrentPage()          // int - Current page number
+$response->getLastPage()             // int - Last page number
+$response->hasMorePages()            // bool - More pages available
+$response->getRawData()              // array - Raw response data
+```
+
+## Error Handling
+
+All SDK methods throw `KycException` on errors:
+
+```php
+use DataFabric\SDK\KycException;
+
+try {
+    $response = $client->createCheck($data);
+} catch (KycException $e) {
+    echo "Error: " . $e->getMessage() . "\n";
+    echo "Code: " . $e->getCode() . "\n";
+    
+    // Log for debugging
+    error_log('KYC Error: ' . $e->getMessage());
+}
+```
+
+### Common Error Scenarios
+
+- Invalid API key → Authentication error
+- Missing required fields → Validation error
+- Rate limit exceeded → Rate limit error
+- Network issues → Connection error
+
+## Testing
+
+Run the test suite:
+
+```bash
+composer test
+```
+
+Run tests with coverage:
+
+```bash
+composer test-coverage
+```
+
+Run static analysis:
+
+```bash
+composer phpstan
+```
+
+Check code style:
+
+```bash
+composer cs-check
+```
+
+Fix code style:
+
+```bash
+composer cs-fix
+```
+
+## Examples
+
+See the `examples/` directory for complete examples:
+
+```bash
+php examples/basic.php
+php examples/create-check.php
+php examples/list-checks.php
+php examples/error-handling.php
+```
+
+## Best Practices
+
+1. **Use Test Keys in Development**
+   - Always use `dfb_test_` keys during development
+   - Switch to `dfb_live_` keys only in production
+
+2. **Store API Keys Securely**
+   - Never commit API keys to version control
+   - Use environment variables or secure vaults
+   - Rotate keys periodically
+
+3. **Handle Errors Gracefully**
+   - Always wrap API calls in try-catch blocks
+   - Log errors for debugging
+   - Provide user-friendly error messages
+
+4. **Use Webhooks**
+   - Don't poll for status updates
+   - Set up webhook endpoints for async notifications
+   - Verify webhook signatures
+
+5. **Validate Before Sending**
+   - Validate data client-side to reduce API calls
+   - Check required fields before submission
+   - Format dates correctly (YYYY-MM-DD)
+
+6. **Monitor API Usage**
+   - Track request IDs for debugging
+   - Monitor rate limits
+   - Log all API interactions
+
+7. **Keep SDK Updated**
+   - Regularly update to the latest version
+   - Review changelogs for breaking changes
+   - Test updates in a staging environment
+
+## Environment Variables
+
+Store your API key in environment variables:
+
+```php
+// .env file
+DATAFABRIC_API_KEY=dfb_test_your_key_here
+DATAFABRIC_BASE_URL=https://datafabric.hiroshiaki.com
+```
+
+```php
+// Load from environment
+$client = new KycClient(
+    $_ENV['DATAFABRIC_API_KEY'],
+    $_ENV['DATAFABRIC_BASE_URL'] ?? 'https://datafabric.hiroshiaki.com'
+);
+```
+
+## Framework Integration
+
+### Laravel
+
+Create a service provider:
+
+```php
+// app/Providers/DataFabricServiceProvider.php
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use DataFabric\SDK\KycClient;
+
+class DataFabricServiceProvider extends ServiceProvider
+{
+    public function register()
+    {
+        $this->app->singleton(KycClient::class, function ($app) {
+            return new KycClient(
+                config('services.datafabric.api_key'),
+                config('services.datafabric.base_url')
+            );
+        });
+    }
+}
+```
+
+```php
+// config/services.php
+'datafabric' => [
+    'api_key' => env('DATAFABRIC_API_KEY'),
+    'base_url' => env('DATAFABRIC_BASE_URL', 'https://datafabric.hiroshiaki.com'),
+],
+```
+
+### Symfony
+
+Define as a service:
+
+```yaml
+# config/services.yaml
+services:
+    DataFabric\SDK\KycClient:
+        arguments:
+            $apiKey: '%env(DATAFABRIC_API_KEY)%'
+            $baseUrl: '%env(DATAFABRIC_BASE_URL)%'
+```
+
+## Documentation
+
+- **[Getting Started Guide](docs/GETTING_STARTED.md)** - Complete beginner's guide
+- **[Setup Instructions](docs/SETUP_SUMMARY.md)** - Developer setup guide
+- **[Publishing Guide](docs/PUBLISHING.md)** - How to publish to Packagist
+- **[Package Structure](docs/PACKAGE_STRUCTURE.md)** - Understanding the codebase
+- **[Complete Documentation](docs/)** - Full documentation index
+
+## Support
+
+- **Documentation**: [https://datafabric.hiroshiaki.com/docs](https://datafabric.hiroshiaki.com/docs)
+- **Issues**: [GitLab Issues](https://gitlab.hiroshiaki.com:8886/hiroshi-aki/datafabric-sdk-php/-/issues)
+- **Email**: support@hiroshiaki.com
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+
+## License
+
+This SDK is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Credits
+
+Developed and maintained by [Hiroshi Aki](https://hiroshiaki.com).
+
+---
+
+**DataFabric** - API-first data services for modern applications.
 
 ## Suggestions for a good README
 
