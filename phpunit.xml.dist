@@ -4,6 +4,7 @@
          bootstrap="vendor/autoload.php"
          colors="true"
          failOnRisky="true"
+         failOnWarning="false"
          stopOnFailure="false">
     <testsuites>
         <testsuite name="DataFabric SDK Test Suite">
