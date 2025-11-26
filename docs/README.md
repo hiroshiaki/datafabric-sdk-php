@@ -10,7 +10,8 @@ Welcome to the DataFabric PHP SDK documentation. This directory contains compreh
 - **[Examples](../examples/)** - Practical code examples
 
 ### Publishing & Deployment
-- **[Publishing Guide](PUBLISHING.md)** - Complete guide to publishing on Packagist
+- **[GitLab CI/CD Guide](GITLAB_CI.md)** - Automated versioning and Packagist publishing
+- **[Publishing Guide](PUBLISHING.md)** - Manual publishing to Packagist
 - **[Package Structure](PACKAGE_STRUCTURE.md)** - Detailed structure explanation
 - **[Complete Summary](COMPLETE_SUMMARY.md)** - Full project overview
 
@@ -37,16 +38,18 @@ Welcome to the DataFabric PHP SDK documentation. This directory contains compreh
 4. **Static Analysis**: Run `composer phpstan`
 
 ### For Package Maintainers
-1. **Publishing**: Follow [PUBLISHING.md](PUBLISHING.md)
-2. **Versioning**: Follow Semantic Versioning (see PUBLISHING.md)
-3. **Releases**: Create tags and update CHANGELOG.md
+1. **CI/CD Setup**: Follow [GITLAB_CI.md](GITLAB_CI.md) for automated releases
+2. **Manual Publishing**: Follow [PUBLISHING.md](PUBLISHING.md) for manual process
+3. **Versioning**: Use semantic commit messages (see GITLAB_CI.md)
+4. **Releases**: Automatic via GitLab CI or manual tags
 
 ## 📖 Document Descriptions
 
 | Document | Purpose | Audience |
 |----------|---------|----------|
 | **SETUP_SUMMARY.md** | Complete setup guide with checklists | Developers |
-| **PUBLISHING.md** | How to publish to Packagist | Maintainers |
+| **GITLAB_CI.md** | Automated CI/CD and semantic versioning | Maintainers |
+| **PUBLISHING.md** | Manual publishing to Packagist | Maintainers |
 | **PACKAGE_STRUCTURE.md** | Package organization explained | Contributors |
 | **COMPLETE_SUMMARY.md** | Full project overview and stats | All |
 | **MAIN_PROJECT_UPDATES.md** | Main project integration | Project maintainers |

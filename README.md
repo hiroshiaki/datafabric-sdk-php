@@ -1,5 +1,6 @@
 # DataFabric PHP SDK
 
+[![Pipeline Status](https://gitlab.hiroshiaki.com:8886/hiroshi-aki/datafabric-sdk-php/badges/main/pipeline.svg)](https://gitlab.hiroshiaki.com:8886/hiroshi-aki/datafabric-sdk-php/-/commits/main)
 [![Latest Version](https://img.shields.io/packagist/v/hiroshiaki/datafabric-sdk-php.svg?style=flat-square)](https://packagist.org/packages/hiroshiaki/datafabric-sdk-php)
 [![License](https://img.shields.io/packagist/l/hiroshiaki/datafabric-sdk-php.svg?style=flat-square)](LICENSE)
 [![PHP Version](https://img.shields.io/packagist/php-v/hiroshiaki/datafabric-sdk-php.svg?style=flat-square)](https://packagist.org/packages/hiroshiaki/datafabric-sdk-php)
@@ -381,6 +382,28 @@ $client = new KycClient(
 );
 ```
 
+## CI/CD & Automated Releases
+
+This package uses GitLab CI/CD for automated testing and releases. See [docs/GITLAB_CI.md](docs/GITLAB_CI.md) for complete setup instructions.
+
+**Automatic versioning based on commit messages:**
+
+```bash
+# Patch bump (v1.0.0 → v1.0.1)
+git commit -m "fix: handle null responses"
+
+# Minor bump (v1.0.1 → v1.1.0)
+git commit -m "feat: add new validation method"
+
+# Major bump (v1.1.0 → v2.0.0)
+git commit -m "breaking: change method signatures"
+```
+
+The pipeline automatically:
+- Tests all code (PHPStan, PSR-12, PHPUnit)
+- Creates version tags
+- Publishes to Packagist
+
 ## Framework Integration
 
 ### Laravel
@@ -467,42 +490,40 @@ Developed and maintained by [Hiroshi Aki](https://hiroshiaki.com).
 
 Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Contributions are welcome! This project uses automated testing and semantic versioning:
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/my-feature`
+3. Make your changes and ensure tests pass: `composer test`
+4. Use semantic commit messages:
+   - `fix:` for bug fixes (patch version)
+   - `feat:` for new features (minor version)
+   - `breaking:` for breaking changes (major version)
+5. Push to your fork and submit a pull request
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### Development Setup
+
+```bash
+git clone https://gitlab.hiroshiaki.com:8886/hiroshi-aki/datafabric-sdk-php.git
+cd datafabric-sdk-php
+composer install
+composer test
+```
+
+See [docs/GITLAB_CI.md](docs/GITLAB_CI.md) for CI/CD details.
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+- **Documentation**: [docs/](docs/)
+- **Issues**: [GitLab Issues](https://gitlab.hiroshiaki.com:8886/hiroshi-aki/datafabric-sdk-php/-/issues)
+- **API Documentation**: https://datafabric.hiroshiaki.com/docs
+
+## Project Status
+
+Active development. Automated releases via GitLab CI/CD.
