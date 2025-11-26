@@ -11,18 +11,20 @@ namespace DataFabric\SDK;
  */
 class KycCheckListResponse
 {
+    /** @var array<mixed> */
     protected array $data;
+    /** @var array<string, mixed> */
     protected array $pagination;
 
     /**
      * Constructor
      *
-     * @param array $response Raw response data from API
+     * @param array<string, mixed> $response Raw response data from API
      */
     public function __construct(array $response)
     {
-        $this->data = $response['data'] ?? [];
-        $this->pagination = $response['pagination'] ?? [];
+        $this->data = is_array($response['data'] ?? null) ? $response['data'] : [];
+        $this->pagination = is_array($response['pagination'] ?? null) ? $response['pagination'] : [];
     }
 
     /**
@@ -32,7 +34,7 @@ class KycCheckListResponse
      */
     public function getChecks(): array
     {
-        return array_map(fn($check) => new KycCheckResponse($check), $this->data);
+        return array_map(fn($check) => new KycCheckResponse(is_array($check) ? $check : []), $this->data);
     }
 
     /**
@@ -42,7 +44,8 @@ class KycCheckListResponse
      */
     public function getTotal(): int
     {
-        return $this->pagination['total'] ?? 0;
+        $total = $this->pagination['total'] ?? 0;
+        return is_int($total) ? $total : 0;
     }
 
     /**
@@ -52,7 +55,8 @@ class KycCheckListResponse
      */
     public function getPerPage(): int
     {
-        return $this->pagination['per_page'] ?? 20;
+        $perPage = $this->pagination['per_page'] ?? 20;
+        return is_int($perPage) ? $perPage : 20;
     }
 
     /**
@@ -62,7 +66,8 @@ class KycCheckListResponse
      */
     public function getCurrentPage(): int
     {
-        return $this->pagination['current_page'] ?? 1;
+        $currentPage = $this->pagination['current_page'] ?? 1;
+        return is_int($currentPage) ? $currentPage : 1;
     }
 
     /**
@@ -72,7 +77,8 @@ class KycCheckListResponse
      */
     public function getLastPage(): int
     {
-        return $this->pagination['last_page'] ?? 1;
+        $lastPage = $this->pagination['last_page'] ?? 1;
+        return is_int($lastPage) ? $lastPage : 1;
     }
 
     /**
@@ -88,7 +94,7 @@ class KycCheckListResponse
     /**
      * Get raw data array
      *
-     * @return array
+     * @return array<mixed>
      */
     public function getRawData(): array
     {

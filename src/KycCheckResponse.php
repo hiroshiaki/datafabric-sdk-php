@@ -11,12 +11,13 @@ namespace DataFabric\SDK;
  */
 class KycCheckResponse
 {
+    /** @var array<string, mixed> */
     protected array $data;
 
     /**
      * Constructor
      *
-     * @param array $data Raw response data from API
+     * @param array<string, mixed> $data Raw response data from API
      */
     public function __construct(array $data)
     {
@@ -30,7 +31,8 @@ class KycCheckResponse
      */
     public function getCheckId(): string
     {
-        return $this->data['check_id'] ?? '';
+        $checkId = $this->data['check_id'] ?? '';
+        return is_string($checkId) ? $checkId : '';
     }
 
     /**
@@ -40,7 +42,8 @@ class KycCheckResponse
      */
     public function getStatus(): string
     {
-        return $this->data['kyc_status'] ?? $this->data['status'] ?? '';
+        $status = $this->data['kyc_status'] ?? $this->data['status'] ?? '';
+        return is_string($status) ? $status : '';
     }
 
     /**
@@ -50,7 +53,8 @@ class KycCheckResponse
      */
     public function getResult(): ?string
     {
-        return $this->data['result'] ?? null;
+        $result = $this->data['result'] ?? null;
+        return is_string($result) ? $result : null;
     }
 
     /**
@@ -60,17 +64,19 @@ class KycCheckResponse
      */
     public function getRiskScore(): ?string
     {
-        return $this->data['risk_score'] ?? null;
+        $score = $this->data['risk_score'] ?? null;
+        return is_string($score) ? $score : null;
     }
 
     /**
      * Get verification details
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function getVerificationDetails(): array
     {
-        return $this->data['verification_details'] ?? [];
+        $details = $this->data['verification_details'] ?? [];
+        return is_array($details) ? $details : [];
     }
 
     /**
@@ -130,13 +136,14 @@ class KycCheckResponse
      */
     public function getRequestId(): ?string
     {
-        return $this->data['request_id'] ?? null;
+        $requestId = $this->data['request_id'] ?? null;
+        return is_string($requestId) ? $requestId : null;
     }
 
     /**
      * Get raw response data
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function getRawData(): array
     {
@@ -146,7 +153,7 @@ class KycCheckResponse
     /**
      * Convert response to array
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function toArray(): array
     {

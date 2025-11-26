@@ -4,6 +4,7 @@
 /.phpunit.cache/
 /.idea/
 /.vscode/
+/.phpstan/
 *.cache
 *.log
 .DS_Store

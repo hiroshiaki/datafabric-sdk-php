@@ -31,7 +31,7 @@ class KycClient
      *
      * @param string $apiKey Your DataFabric API key (dfb_test_* or dfb_live_*)
      * @param string $baseUrl Base URL for API (default: https://datafabric.hiroshiaki.com)
-     * @param array $options Additional Guzzle client options
+     * @param array<string, mixed> $options Additional Guzzle client options
      */
     public function __construct(
         string $apiKey,
@@ -60,7 +60,7 @@ class KycClient
     /**
      * Create a new KYC check
      *
-     * @param array $data KYC check data
+     * @param array<string, mixed> $data KYC check data
      * @return KycCheckResponse
      * @throws KycException
      */
@@ -118,7 +118,7 @@ class KycClient
     /**
      * List KYC checks with optional filters
      *
-     * @param array $filters Optional filters (status, result, user_reference, per_page)
+     * @param array<string, mixed> $filters Optional filters (status, result, user_reference, per_page)
      * @return KycCheckListResponse
      * @throws KycException
      */
@@ -174,7 +174,7 @@ class KycClient
     /**
      * Validate check data before sending
      *
-     * @param array $data
+     * @param array<string, mixed> $data
      * @throws KycException
      */
     protected function validateCheckData(array $data): void
@@ -193,8 +193,12 @@ class KycClient
         }
 
         // Validate date format
-        $date = \DateTime::createFromFormat('Y-m-d', $data['date_of_birth']);
-        if (!$date || $date->format('Y-m-d') !== $data['date_of_birth']) {
+        $dateOfBirth = $data['date_of_birth'];
+        if (!is_string($dateOfBirth)) {
+            throw new KycException('date_of_birth must be a string');
+        }
+        $date = \DateTime::createFromFormat('Y-m-d', $dateOfBirth);
+        if (!$date || $date->format('Y-m-d') !== $dateOfBirth) {
             throw new KycException("Invalid date_of_birth format. Must be YYYY-MM-DD");
         }
     }
