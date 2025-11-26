@@ -32,6 +32,9 @@ test:
 auto-tag:
   stage: tag
   image: alpine:latest
+  variables:
+    GIT_STRATEGY: clone
+    GIT_SSL_NO_VERIFY: "true"
   before_script:
     - apk add --no-cache git curl jq
     - git config user.email "ci@hiroshiaki.com"
@@ -47,32 +50,32 @@ auto-tag:
     - echo "Commit message':' $COMMIT_MSG"
     - |
       if echo "$COMMIT_MSG" | grep -qiE "^(breaking|major):"; then
-        export MAJOR=$((MAJOR + 1))
-        export MINOR=0
-        export PATCH=0
-        export VERSION_TYPE="major"
+        MAJOR=$((MAJOR + 1))
+        MINOR=0
+        PATCH=0
+        VERSION_TYPE="major"
       elif echo "$COMMIT_MSG" | grep -qiE "^(feat|feature|minor):"; then
-        export MINOR=$((MINOR + 1))
-        export PATCH=0
-        export VERSION_TYPE="minor"
+        MINOR=$((MINOR + 1))
+        PATCH=0
+        VERSION_TYPE="minor"
       elif echo "$COMMIT_MSG" | grep -qiE "^(fix|patch|chore|docs|style|refactor|perf|test):"; then
-        export PATCH=$((PATCH + 1))
-        export VERSION_TYPE="patch"
+        PATCH=$((PATCH + 1))
+        VERSION_TYPE="patch"
       else
         echo "No version bump trigger found in commit message. Skipping tag creation."
         echo "Use prefixes: breaking:/major:, feat:/feature:/minor:, fix:/patch:/chore:/docs:"
-        touch tag.env
         exit 0
       fi
-      export NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}"
-      echo "Creating new tag: $NEW_TAG (${VERSION_TYPE} version bump)"
-      git tag -a "$NEW_TAG" -m "Release $NEW_TAG"
-      git push "https://oauth2:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git" "$NEW_TAG"
-      echo "Tag $NEW_TAG created and pushed successfully!"
-      echo "NEW_TAG=$NEW_TAG" >> tag.env
+    - NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}"
+    - echo "Creating new tag':' $NEW_TAG (${VERSION_TYPE} version bump)"
+    - git tag -a "$NEW_TAG" -m "Release $NEW_TAG"
+    - git push --push-option=ci.skip "https://oauth2:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git" "$NEW_TAG"
+    - echo "Tag $NEW_TAG created and pushed successfully!"
+    - echo "NEW_TAG=$NEW_TAG" > tag.env
   artifacts:
     reports:
       dotenv: tag.env
+    when: on_success
   only:
     - main
     - master
@@ -116,6 +119,8 @@ notify-packagist:
 manual-tag:
   stage: tag
   image: alpine:latest
+  variables:
+    GIT_SSL_NO_VERIFY: "true"
   before_script:
     - apk add --no-cache git
     - git config user.email "ci@hiroshiaki.com"
