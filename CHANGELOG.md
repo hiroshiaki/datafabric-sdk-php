@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
-- **Critical**: `getCheckId()` now correctly handles API responses returning `id` field instead of `check_id`
+- **Critical**: Added `extractResponseData()` helper to handle both wrapped and direct API response formats
+- `getCheckId()` now correctly handles responses with `check_id` or `id` fields
 - Support for both string and integer ID formats from API responses
+- All API methods now properly extract data from wrapped responses: `{"status": "success", "data": {...}}`
 
 ### Added
 - **AI-Powered OCR**: Document upload with automatic data extraction using AI models (GPT-4o Vision, Gemini 2.0 Flash, Claude 3 Opus)

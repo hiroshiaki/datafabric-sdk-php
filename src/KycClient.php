@@ -78,7 +78,12 @@ class KycClient
                 throw new KycException('Invalid response from API');
             }
 
-            return new KycCheckResponse($body);
+            // Handle both response formats:
+            // Format 1: {"status": "success", "check_id": "...", ...}
+            // Format 2: {"status": "success", "data": {"check_id": "...", ...}}
+            $responseData = $this->extractResponseData($body);
+
+            return new KycCheckResponse($responseData);
         } catch (GuzzleException $e) {
             throw new KycException(
                 "Failed to create KYC check: " . $e->getMessage(),
@@ -105,7 +110,8 @@ class KycClient
                 throw new KycException('Invalid response from API');
             }
 
-            return new KycCheckResponse($body);
+            $responseData = $this->extractResponseData($body);
+            return new KycCheckResponse($responseData);
         } catch (GuzzleException $e) {
             throw new KycException(
                 "Failed to get KYC check: " . $e->getMessage(),
@@ -134,7 +140,8 @@ class KycClient
                 throw new KycException('Invalid response from API');
             }
 
-            return new KycCheckListResponse($body);
+            $responseData = $this->extractResponseData($body);
+            return new KycCheckListResponse($responseData);
         } catch (GuzzleException $e) {
             throw new KycException(
                 "Failed to list KYC checks: " . $e->getMessage(),
@@ -161,7 +168,8 @@ class KycClient
                 throw new KycException('Invalid response from API');
             }
 
-            return new KycCheckResponse($body);
+            $responseData = $this->extractResponseData($body);
+            return new KycCheckResponse($responseData);
         } catch (GuzzleException $e) {
             throw new KycException(
                 "Failed to reprocess KYC check: " . $e->getMessage(),
@@ -213,7 +221,8 @@ class KycClient
                 throw new KycException('Invalid response from API');
             }
 
-            return new KycDocumentResponse($body);
+            $responseData = $this->extractResponseData($body);
+            return new KycDocumentResponse($responseData);
         } catch (GuzzleException $e) {
             throw new KycException(
                 "Failed to upload document: " . $e->getMessage(),
@@ -240,7 +249,8 @@ class KycClient
                 throw new KycException('Invalid response from API');
             }
 
-            return new KycDocumentListResponse($body);
+            $responseData = $this->extractResponseData($body);
+            return new KycDocumentListResponse($responseData);
         } catch (GuzzleException $e) {
             throw new KycException(
                 "Failed to get documents: " . $e->getMessage(),
@@ -325,6 +335,27 @@ class KycClient
         if (!in_array($mimeType, $allowedMimeTypes)) {
             throw new KycException("Invalid image format. Must be JPEG, PNG, or WebP");
         }
+    }
+
+    /**
+     * Extract response data handling different API response formats
+     *
+     * @param array<string, mixed> $body
+     * @return array<string, mixed>
+     */
+    protected function extractResponseData(array $body): array
+    {
+        // Handle wrapped response: {"status": "success", "data": {...}}
+        if (isset($body['data']) && is_array($body['data'])) {
+            // Preserve root-level fields like 'status' while extracting data
+            return array_merge(
+                array_filter($body, fn($key) => $key !== 'data', ARRAY_FILTER_USE_KEY),
+                $body['data']
+            );
+        }
+
+        // Handle direct response: {"status": "success", "check_id": "...", ...}
+        return $body;
     }
 
     /**

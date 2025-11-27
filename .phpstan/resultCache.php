@@ -596,7 +596,7 @@ return [
   ),
   '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php' => 
   array (
-    'fileHash' => '836be2d20d1b0f0a40f4441a6663daaf554f5fd4',
+    'fileHash' => '143a0e965ce074671be30497a6e7a4ea818ad8d3',
     'dependentFiles' => 
     array (
       0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/KycClientTest.php',
@@ -2281,6 +2281,52 @@ return [
         )),
         15 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'extractResponseData',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Extract response data handling different API response formats
+     *
+     * @param array<string, mixed> $body
+     * @return array<string, mixed>
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+              'client' => 'GuzzleHttp\\Client',
+              'guzzleexception' => 'GuzzleHttp\\Exception\\GuzzleException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => false,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'body',
+               'type' => 'array',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        16 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'isTestMode',
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
@@ -2313,7 +2359,7 @@ return [
           array (
           ),
         )),
-        16 => 
+        17 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getBaseUrl',
            'phpDoc' => 

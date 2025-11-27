@@ -260,4 +260,46 @@ class KycCheckResponseTest extends BaseTestCase
         $this->assertJson($json);
         $this->assertEquals($data, json_decode($json, true));
     }
+
+    public function testWrappedResponseWithDataField(): void
+    {
+        // Simulate API response with wrapped data: {"status": "success", "data": {...}}
+        $wrappedData = [
+            'status' => 'success',
+            'data' => [
+                'check_id' => 'chk_wrapped_123',
+                'kyc_status' => 'completed',
+                'result' => 'approved',
+            ]
+        ];
+
+        // After extraction, data should be flattened
+        $extractedData = [
+            'status' => 'success',
+            'check_id' => 'chk_wrapped_123',
+            'kyc_status' => 'completed',
+            'result' => 'approved',
+        ];
+
+        $response = new KycCheckResponse($extractedData);
+
+        $this->assertEquals('chk_wrapped_123', $response->getCheckId());
+        $this->assertEquals('completed', $response->getStatus());
+        $this->assertEquals('approved', $response->getResult());
+    }
+
+    public function testDirectResponseWithoutDataField(): void
+    {
+        // Simulate direct API response: {"status": "success", "check_id": "...", ...}
+        $directData = [
+            'status' => 'success',
+            'check_id' => 'chk_direct_456',
+            'kyc_status' => 'pending',
+        ];
+
+        $response = new KycCheckResponse($directData);
+
+        $this->assertEquals('chk_direct_456', $response->getCheckId());
+        $this->assertEquals('pending', $response->getStatus());
+    }
 }
