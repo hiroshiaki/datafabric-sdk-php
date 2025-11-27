@@ -31,8 +31,8 @@ class KycCheckResponse
      */
     public function getCheckId(): string
     {
-        $checkId = $this->data['check_id'] ?? '';
-        return is_string($checkId) ? $checkId : '';
+        $checkId = $this->data['check_id'] ?? $this->data['id'] ?? '';
+        return is_string($checkId) ? $checkId : (is_int($checkId) ? (string)$checkId : '');
     }
 
     /**

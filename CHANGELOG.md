@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Critical**: `getCheckId()` now correctly handles API responses returning `id` field instead of `check_id`
+- Support for both string and integer ID formats from API responses
+
 ### Added
 - **AI-Powered OCR**: Document upload with automatic data extraction using AI models (GPT-4o Vision, Gemini 2.0 Flash, Claude 3 Opus)
 - `uploadDocument()` method for uploading ID cards, passports, and driver's licenses with AI OCR
