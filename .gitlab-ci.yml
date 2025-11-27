@@ -46,8 +46,17 @@ auto-tag:
     - git config user.name "GitLab CI"
     - git remote add github git@github.com:hiroshiaki/datafabric-sdk-php.git || true
   script:
-    - LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
-    - echo "Latest tag':' $LATEST_TAG"
+    # Fetch latest tag from GitHub (public repository)
+    - echo "Fetching latest version from GitHub..."
+    - git fetch github --tags 2>/dev/null || true
+    - LATEST_TAG=$(git tag -l "v*" --sort=-version:refname | head -n 1)
+    - |
+      if [ -z "$LATEST_TAG" ]; then
+        echo "No existing tags found, starting from v0.0.0"
+        LATEST_TAG="v0.0.0"
+      else
+        echo "Latest tag from GitHub: $LATEST_TAG"
+      fi
     - VERSION=${LATEST_TAG#v}
     - MAJOR=$(echo $VERSION | cut -d. -f1)
     - MINOR=$(echo $VERSION | cut -d. -f2)
@@ -74,9 +83,16 @@ auto-tag:
       fi
     - NEW_TAG="v${MAJOR}.${MINOR}.${PATCH}"
     - echo "Creating new tag':' $NEW_TAG (${VERSION_TYPE} version bump)"
+    # Check if tag already exists on GitHub
+    - |
+      if git ls-remote --tags github | grep -q "refs/tags/$NEW_TAG"; then
+        echo "⚠️  Tag $NEW_TAG already exists on GitHub. Skipping tag creation."
+        echo "This usually means the tag was already created in a previous run."
+        exit 0
+      fi
     - git tag -a "$NEW_TAG" -m "Release $NEW_TAG"
     - git push github "$NEW_TAG"
-    - echo "Tag $NEW_TAG created and pushed successfully to GitHub!"
+    - echo "✅ Tag $NEW_TAG created and pushed successfully to GitHub!"
     - echo "NEW_TAG=$NEW_TAG" > tag.env
   artifacts:
     reports:
