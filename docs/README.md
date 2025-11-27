@@ -1,77 +1,43 @@
 # DataFabric PHP SDK - Documentation
 
-Welcome to the DataFabric PHP SDK documentation. This directory contains comprehensive guides for developers and contributors.
+Welcome to the DataFabric PHP SDK documentation.
 
-## 📚 Documentation Index
+## 📚 Documentation
 
-### Getting Started
-- **[Main README](../README.md)** - Installation, quick start, and API reference
-- **[Setup Summary](SETUP_SUMMARY.md)** - Step-by-step setup instructions
+### User Documentation
+- **[Main README](../README.md)** - Installation, quick start, and complete API reference
+- **[Getting Started Guide](GETTING_STARTED.md)** - Comprehensive beginner's guide
 - **[Examples](../examples/)** - Practical code examples
 
-### Publishing & Deployment
-- **[GitLab CI/CD Guide](GITLAB_CI.md)** - Automated versioning and Packagist publishing
-- **[Publishing Guide](PUBLISHING.md)** - Manual publishing to Packagist
-- **[Package Structure](PACKAGE_STRUCTURE.md)** - Detailed structure explanation
-- **[Complete Summary](COMPLETE_SUMMARY.md)** - Full project overview
-
-### Contributing
+### Additional Resources
 - **[Contributing Guidelines](../CONTRIBUTING.md)** - How to contribute
-- **[Changelog](../CHANGELOG.md)** - Version history
+- **[Changelog](../CHANGELOG.md)** - Version history and updates
 - **[License](../LICENSE)** - MIT License
 
-### Integration
-- **[Main Project Updates](MAIN_PROJECT_UPDATES.md)** - Updating the main DataFabric project
+## 🚀 Quick Start
 
-## 🚀 Quick Links
+1. **Installation**: `composer require hiroshiaki/datafabric-sdk-php`
+2. **Get API Key**: Sign up at [DataFabric](https://datafabric.hiroshiaki.com)
+3. **Follow Guide**: Read [Getting Started](GETTING_STARTED.md)
+4. **Run Examples**: Check [examples/](../examples/)
 
-### For End Users
-1. **Installation**: See [README.md](../README.md#installation)
-2. **Usage Guide**: See [README.md](../README.md#usage)
-3. **API Reference**: See [README.md](../README.md#response-objects)
-4. **Examples**: Browse [examples/](../examples/)
+## 📖 Key Features
 
-### For Contributors
-1. **Setup**: Follow [SETUP_SUMMARY.md](SETUP_SUMMARY.md)
-2. **Code Style**: Run `composer cs-check` and `composer cs-fix`
-3. **Testing**: Run `composer test`
-4. **Static Analysis**: Run `composer phpstan`
-
-### For Package Maintainers
-1. **CI/CD Setup**: Follow [GITLAB_CI.md](GITLAB_CI.md) for automated releases
-2. **Manual Publishing**: Follow [PUBLISHING.md](PUBLISHING.md) for manual process
-3. **Versioning**: Use semantic commit messages (see GITLAB_CI.md)
-4. **Releases**: Automatic via GitLab CI or manual tags
-
-## 📖 Document Descriptions
-
-| Document | Purpose | Audience |
-|----------|---------|----------|
-| **SETUP_SUMMARY.md** | Complete setup guide with checklists | Developers |
-| **GITLAB_CI.md** | Automated CI/CD and semantic versioning | Maintainers |
-| **PUBLISHING.md** | Manual publishing to Packagist | Maintainers |
-| **PACKAGE_STRUCTURE.md** | Package organization explained | Contributors |
-| **COMPLETE_SUMMARY.md** | Full project overview and stats | All |
-| **MAIN_PROJECT_UPDATES.md** | Main project integration | Project maintainers |
+- **✨ AI-Powered OCR** - Automatic document data extraction
+- **KYC Verification** - Identity verification with risk scoring
+- **Document Upload** - Support for ID cards, passports, driver's licenses
+- **Strongly Typed** - Full PHP 8.0+ type declarations
+- **Test & Live Modes** - Separate environments for development and production
 
 ## 🔗 External Resources
 
 - **Packagist**: https://packagist.org/packages/hiroshiaki/datafabric-sdk-php
 - **Repository**: https://gitlab.hiroshiaki.com:8886/hiroshi-aki/datafabric-sdk-php
-- **DataFabric API**: https://datafabric.hiroshiaki.com
-- **PHP-FIG Standards**: https://www.php-fig.org/psr/
+- **API Documentation**: https://datafabric.hiroshiaki.com/docs
+- **DataFabric Dashboard**: https://datafabric.hiroshiaki.com
 
-## 📝 Documentation Standards
-
-All documentation follows these principles:
-- Clear and concise writing
-- Practical examples included
-- Step-by-step instructions
-- Code snippets with syntax highlighting
-- Regular updates with releases
-
-## 🆘 Need Help?
+## 🆘 Support
 
 - **Issues**: [GitLab Issues](https://gitlab.hiroshiaki.com:8886/hiroshi-aki/datafabric-sdk-php/-/issues)
 - **Email**: support@hiroshiaki.com
-- **Documentation**: Check this index for relevant guides
+- **API Docs**: https://datafabric.hiroshiaki.com/docs

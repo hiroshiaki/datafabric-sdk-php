@@ -9,12 +9,15 @@ Official PHP SDK for the DataFabric API. Integrate KYC verification, maps, routi
 
 ## Features
 
-- **KYC Verification** - Identity verification and document checks
-- **Easy Integration** - Simple, intuitive API
+- **✨ AI-Powered OCR** - Automatic document data extraction using GPT-4o Vision, Gemini 2.0 Flash, and Claude 3 Opus
+- **KYC Verification** - Identity verification and document checks with risk scoring
+- **Document Upload** - Upload ID cards, passports, driver's licenses with image validation
+- **Easy Integration** - Simple, intuitive API with strongly-typed responses
 - **PSR-4 Autoloading** - Modern PHP standards
-- **Fully Typed** - PHP 8.0+ with type declarations
+- **Fully Typed** - PHP 8.0+ with strict type declarations
 - **Test & Live Modes** - Separate environments for development and production
 - **Comprehensive Error Handling** - Custom exceptions with detailed messages
+- **Webhook Support** - Real-time notifications for async processing
 
 ## Requirements
 
@@ -46,19 +49,37 @@ $client = new KycClient('dfb_test_your_api_key_here');
 
 try {
     // Create a KYC check
-    $response = $client->createCheck([
+    $checkResponse = $client->createCheck([
         'first_name' => 'John',
         'last_name' => 'Doe',
         'date_of_birth' => '1990-05-15',
         'document_type' => 'passport',
-        'document_number' => 'AB123456'
+        'document_number' => 'AB123456',
+        'email' => 'john@example.com'
     ]);
     
-    echo "Check ID: " . $response->getCheckId() . "\n";
-    echo "Status: " . $response->getStatus() . "\n";
+    echo "Check ID: " . $checkResponse->getCheckId() . "\n";
+    echo "Status: " . $checkResponse->getStatus() . "\n";
     
-    if ($response->isApproved()) {
+    // Upload document with AI OCR
+    $documentResponse = $client->uploadDocument(
+        $checkResponse->getCheckId(),
+        '/path/to/passport.jpg',
+        'front',
+        true  // Enable AI OCR
+    );
+    
+    if ($documentResponse->hasOcrData()) {
+        echo "Extracted Name: " . $documentResponse->getExtractedFullName() . "\n";
+        echo "ID Number: " . $documentResponse->getExtractedIdNumber() . "\n";
+        echo "Confidence: " . $documentResponse->getConfidence() . "%\n";
+    }
+    
+    // Check verification result
+    $finalCheck = $client->getCheck($checkResponse->getCheckId());
+    if ($finalCheck->isApproved()) {
         echo "✅ Verification approved!\n";
+        echo "Risk Score: " . $finalCheck->getRiskScore() . "\n";
     }
     
 } catch (KycException $e) {
@@ -219,6 +240,94 @@ $response = $client->reprocessCheck('chk_abc123...');
 echo "New status: " . $response->getStatus() . "\n";
 ```
 
+### Upload Documents with AI OCR
+
+Upload ID cards, passports, or driver's licenses with automatic data extraction:
+
+```php
+// Upload front of ID card with AI OCR enabled
+$documentResponse = $client->uploadDocument(
+    'chk_abc123...',           // Check ID
+    '/path/to/id-front.jpg',   // Image file path
+    'front',                   // Image type: front|back|selfie|proof_of_address
+    true                       // Enable AI OCR (default: true)
+);
+
+echo "Document ID: " . $documentResponse->getId() . "\n";
+
+// Access AI-extracted data
+if ($documentResponse->hasOcrData()) {
+    echo "Extracted Name: " . $documentResponse->getExtractedFullName() . "\n";
+    echo "ID Number: " . $documentResponse->getExtractedIdNumber() . "\n";
+    echo "Date of Birth: " . $documentResponse->getExtractedDateOfBirth() . "\n";
+    echo "Nationality: " . $documentResponse->getExtractedNationality() . "\n";
+    echo "OCR Confidence: " . $documentResponse->getConfidence() . "%\n";
+}
+```
+
+#### Supported Image Types
+
+- `front` - Front of document (ID card, passport, driver's license)
+- `back` - Back of document
+- `selfie` - Selfie photo for facial verification
+- `proof_of_address` - Utility bill, bank statement, etc.
+
+#### Image Requirements
+
+- **Formats**: JPEG, PNG, WebP
+- **Max Size**: 10MB
+- **Recommended**: Minimum 1000px width for best OCR accuracy
+- **Quality**: Clear, well-lit, no glare or shadows
+
+#### AI-Extracted Fields
+
+The OCR system can extract:
+- Document type (passport, national_id, drivers_license)
+- Full name, first name, last name
+- ID/Document number
+- Date of birth
+- Gender
+- Nationality
+- Address
+- Confidence score (0-100)
+
+#### Supported Documents
+
+- Malaysian IC (MyKad)
+- Passports
+- Driver's Licenses
+- National IDs
+- Residence Permits
+
+#### AI Models Used
+
+- Google Gemini 2.0 Flash
+- GPT-4o Vision
+- Claude 3 Opus
+
+Processing time: 2-5 seconds per document
+
+### Get All Documents
+
+Retrieve all uploaded documents for a check:
+
+```php
+$documentsResponse = $client->getDocuments('chk_abc123...');
+
+echo "Total Documents: " . $documentsResponse->getCount() . "\n";
+
+foreach ($documentsResponse->getDocuments() as $doc) {
+    echo "- Document #{$doc['id']} ({$doc['image_type']})";
+    if ($doc['has_ocr_data'] ?? false) {
+        echo " ✨ Has OCR data";
+    }
+    echo "\n";
+}
+
+// Filter by type
+$frontDocs = $documentsResponse->getDocumentsByType('front');
+```
+
 ## Response Objects
 
 ### KycCheckResponse
@@ -232,6 +341,7 @@ $response->getResult()               // string|null - approved|rejected|review_r
 $response->getRiskScore()            // string|null - low|medium|high
 $response->getVerificationDetails()  // array - Detailed verification results
 $response->getRequestId()            // string|null - Request ID for support
+$response->getExpiresAt()            // string|null - Expiration datetime (ISO 8601)
 
 // Helper methods
 $response->isApproved()              // bool
@@ -239,6 +349,7 @@ $response->isRejected()              // bool
 $response->requiresReview()          // bool
 $response->isPending()               // bool
 $response->isCompleted()             // bool
+$response->isExpired()               // bool
 
 // Data export
 $response->toArray()                 // array
@@ -258,6 +369,48 @@ $response->getCurrentPage()          // int - Current page number
 $response->getLastPage()             // int - Last page number
 $response->hasMorePages()            // bool - More pages available
 $response->getRawData()              // array - Raw response data
+```
+
+### KycDocumentResponse
+
+Document upload response with AI OCR data:
+
+```php
+$response->getId()                      // int|null - Document ID
+$response->getImageType()               // string|null - front|back|selfie|proof_of_address
+$response->hasOcrData()                 // bool - Has AI-extracted data
+$response->getOcrData()                 // array|null - Raw OCR data
+$response->isSuccessful()               // bool - Upload successful
+
+// AI-Extracted Fields
+$response->getExtractedDocumentType()   // string|null - passport|national_id|drivers_license
+$response->getExtractedFullName()       // string|null
+$response->getExtractedFirstName()      // string|null
+$response->getExtractedLastName()       // string|null
+$response->getExtractedIdNumber()       // string|null
+$response->getExtractedDateOfBirth()    // string|null - YYYY-MM-DD
+$response->getExtractedGender()         // string|null
+$response->getExtractedNationality()    // string|null
+$response->getExtractedAddress()        // string|null
+$response->getConfidence()              // int|null - OCR confidence (0-100)
+$response->getProvider()                // string|null - AI provider used
+
+// Data export
+$response->toArray()                    // array
+$response->toJson()                     // string
+$response->getRawData()                 // array
+```
+
+### KycDocumentListResponse
+
+List of documents for a check:
+
+```php
+$response->getDocuments()               // array - Array of document data
+$response->getCount()                   // int - Total documents
+$response->hasOcrData()                 // bool - Any documents have OCR data
+$response->getDocumentsByType($type)    // array - Filter by image type
+$response->getRawData()                 // array - Raw response data
 ```
 
 ## Error Handling
@@ -322,10 +475,11 @@ composer cs-fix
 See the `examples/` directory for complete examples:
 
 ```bash
-php examples/basic.php
-php examples/create-check.php
-php examples/list-checks.php
-php examples/error-handling.php
+php examples/basic.php              # Basic SDK usage
+php examples/create-check.php       # Create KYC checks
+php examples/upload-document.php    # Upload documents with AI OCR
+php examples/list-checks.php        # List and filter checks
+php examples/error-handling.php     # Error handling patterns
 ```
 
 ## Best Practices
@@ -347,19 +501,35 @@ php examples/error-handling.php
 4. **Use Webhooks**
    - Don't poll for status updates
    - Set up webhook endpoints for async notifications
-   - Verify webhook signatures
+   - Verify webhook signatures (HMAC-SHA256)
 
 5. **Validate Before Sending**
    - Validate data client-side to reduce API calls
    - Check required fields before submission
    - Format dates correctly (YYYY-MM-DD)
 
-6. **Monitor API Usage**
-   - Track request IDs for debugging
-   - Monitor rate limits
-   - Log all API interactions
+6. **Document Upload Best Practices**
+   - Upload high-quality images (min 1000px width)
+   - Ensure documents are clearly visible and well-lit
+   - Avoid glare, shadows, or obstructions
+   - Use appropriate image types (front, back, selfie, proof_of_address)
+   - Keep file sizes under 10MB
+   - Use JPEG, PNG, or WebP formats
 
-7. **Keep SDK Updated**
+7. **OCR Data Usage**
+   - Always check `hasOcrData()` before accessing extracted fields
+   - Verify OCR confidence scores (aim for >90%)
+   - Manually review cases with low confidence
+   - Compare extracted data with user-submitted data
+   - Handle null values gracefully
+
+8. **Monitor API Usage**
+   - Track request IDs for debugging
+   - Monitor rate limits (10-120 req/min depending on plan)
+   - Log all API interactions
+   - Watch for expiration dates on checks (30 days)
+
+9. **Keep SDK Updated**
    - Regularly update to the latest version
    - Review changelogs for breaking changes
    - Test updates in a staging environment
@@ -454,11 +624,9 @@ services:
 
 ## Documentation
 
-- **[Getting Started Guide](docs/GETTING_STARTED.md)** - Complete beginner's guide
-- **[Setup Instructions](docs/SETUP_SUMMARY.md)** - Developer setup guide
-- **[Publishing Guide](docs/PUBLISHING.md)** - How to publish to Packagist
-- **[Package Structure](docs/PACKAGE_STRUCTURE.md)** - Understanding the codebase
-- **[Complete Documentation](docs/)** - Full documentation index
+- **[Getting Started Guide](docs/GETTING_STARTED.md)** - Comprehensive beginner's guide with framework integration
+- **[API Documentation](https://datafabric.hiroshiaki.com/docs)** - Official DataFabric API documentation
+- **[Examples Directory](examples/)** - Working code examples for all features
 
 ## Support
 

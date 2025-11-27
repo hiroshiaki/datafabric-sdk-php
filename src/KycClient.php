@@ -172,6 +172,85 @@ class KycClient
     }
 
     /**
+     * Upload document image with AI OCR extraction
+     *
+     * @param string $checkId The check ID
+     * @param string $imagePath Path to the image file
+     * @param string $imageType Image type: front|back|selfie|proof_of_address
+     * @param bool $autoExtract Enable AI OCR extraction (default: true)
+     * @return KycDocumentResponse
+     * @throws KycException
+     */
+    public function uploadDocument(
+        string $checkId,
+        string $imagePath,
+        string $imageType,
+        bool $autoExtract = true
+    ): KycDocumentResponse {
+        $this->validateDocumentUpload($imagePath, $imageType);
+
+        try {
+            $response = $this->httpClient->post("/api/v1/kyc/checks/{$checkId}/documents", [
+                'multipart' => [
+                    [
+                        'name' => 'image',
+                        'contents' => fopen($imagePath, 'r'),
+                        'filename' => basename($imagePath),
+                    ],
+                    [
+                        'name' => 'image_type',
+                        'contents' => $imageType,
+                    ],
+                    [
+                        'name' => 'auto_extract',
+                        'contents' => $autoExtract ? 'true' : 'false',
+                    ],
+                ],
+            ]);
+
+            $body = json_decode($response->getBody()->getContents(), true);
+            if (!is_array($body)) {
+                throw new KycException('Invalid response from API');
+            }
+
+            return new KycDocumentResponse($body);
+        } catch (GuzzleException $e) {
+            throw new KycException(
+                "Failed to upload document: " . $e->getMessage(),
+                $e->getCode(),
+                $e
+            );
+        }
+    }
+
+    /**
+     * Get all documents for a KYC check
+     *
+     * @param string $checkId The check ID
+     * @return KycDocumentListResponse
+     * @throws KycException
+     */
+    public function getDocuments(string $checkId): KycDocumentListResponse
+    {
+        try {
+            $response = $this->httpClient->get("/api/v1/kyc/checks/{$checkId}/documents");
+
+            $body = json_decode($response->getBody()->getContents(), true);
+            if (!is_array($body)) {
+                throw new KycException('Invalid response from API');
+            }
+
+            return new KycDocumentListResponse($body);
+        } catch (GuzzleException $e) {
+            throw new KycException(
+                "Failed to get documents: " . $e->getMessage(),
+                $e->getCode(),
+                $e
+            );
+        }
+    }
+
+    /**
      * Validate check data before sending
      *
      * @param array<string, mixed> $data
@@ -200,6 +279,51 @@ class KycClient
         $date = \DateTime::createFromFormat('Y-m-d', $dateOfBirth);
         if (!$date || $date->format('Y-m-d') !== $dateOfBirth) {
             throw new KycException("Invalid date_of_birth format. Must be YYYY-MM-DD");
+        }
+    }
+
+    /**
+     * Validate document upload parameters
+     *
+     * @param string $imagePath Path to the image file
+     * @param string $imageType Image type
+     * @throws KycException
+     */
+    protected function validateDocumentUpload(string $imagePath, string $imageType): void
+    {
+        // Check if file exists
+        if (!file_exists($imagePath)) {
+            throw new KycException("Image file not found: {$imagePath}");
+        }
+
+        // Check if file is readable
+        if (!is_readable($imagePath)) {
+            throw new KycException("Image file is not readable: {$imagePath}");
+        }
+
+        // Validate image type
+        $validImageTypes = ['front', 'back', 'selfie', 'proof_of_address'];
+        if (!in_array($imageType, $validImageTypes)) {
+            throw new KycException("Invalid image_type. Must be one of: " . implode(', ', $validImageTypes));
+        }
+
+        // Check file size (max 10MB)
+        $fileSize = filesize($imagePath);
+        if ($fileSize === false || $fileSize > 10 * 1024 * 1024) {
+            throw new KycException("Image file size must not exceed 10MB");
+        }
+
+        // Validate file type
+        $allowedMimeTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        if ($finfo === false) {
+            throw new KycException("Failed to detect image file type");
+        }
+        $mimeType = finfo_file($finfo, $imagePath);
+        finfo_close($finfo);
+
+        if (!in_array($mimeType, $allowedMimeTypes)) {
+            throw new KycException("Invalid image format. Must be JPEG, PNG, or WebP");
         }
     }
 

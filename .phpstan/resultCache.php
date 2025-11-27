@@ -1,27 +1,27 @@
 <?php declare(strict_types = 1);
 
 return [
-	'lastFullAnalysisTime' => 1764142853,
+	'lastFullAnalysisTime' => 1764231638,
 	'meta' => array (
   'cacheVersion' => 'v12-linesToIgnore',
   'phpstanVersion' => '1.12.32',
-  'phpVersion' => 80200,
-  'projectConfig' => '{parameters: {level: max, paths: [/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src, /Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/tests], excludePaths: {analyseAndScan: [/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor], analyse: []}, tmpDir: /Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/.phpstan, checkMissingIterableValueType: false}}',
+  'phpVersion' => 80413,
+  'projectConfig' => '{parameters: {level: max, paths: [/Users/m1/Documents/Gitlab/datafabric-sdk-php/src, /Users/m1/Documents/Gitlab/datafabric-sdk-php/tests], excludePaths: {analyseAndScan: [/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor], analyse: []}, tmpDir: /Users/m1/Documents/Gitlab/datafabric-sdk-php/.phpstan}}',
   'analysedPaths' => 
   array (
-    0 => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src',
-    1 => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/tests',
+    0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src',
+    1 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests',
   ),
   'scannedFiles' => 
   array (
   ),
   'composerLocks' => 
   array (
-    '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/composer.lock' => '27c1631e007b9f87726099a38f0c45b015badb1e',
+    '/Users/m1/Documents/Gitlab/datafabric-sdk-php/composer.lock' => '814467179b4e8c5bf67d11d582c1d8f5d8ca9274',
   ),
   'composerInstalled' => 
   array (
-    '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/installed.php' => 
+    '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/installed.php' => 
     array (
       'versions' => 
       array (
@@ -31,7 +31,7 @@ return [
           'version' => '7.10.0.0',
           'reference' => 'b51ac707cfa420b7bfd4e4d5e510ba8008e822b4',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../guzzlehttp/guzzle',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../guzzlehttp/guzzle',
           'aliases' => 
           array (
           ),
@@ -43,7 +43,7 @@ return [
           'version' => '2.3.0.0',
           'reference' => '481557b130ef3790cf82b713667b43030dc9c957',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../guzzlehttp/promises',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../guzzlehttp/promises',
           'aliases' => 
           array (
           ),
@@ -55,7 +55,7 @@ return [
           'version' => '2.8.0.0',
           'reference' => '21dc724a0583619cd1652f673303492272778051',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../guzzlehttp/psr7',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../guzzlehttp/psr7',
           'aliases' => 
           array (
           ),
@@ -67,7 +67,7 @@ return [
           'version' => '1.13.4.0',
           'reference' => '07d290f0c47959fd5eed98c95ee5602db07e0b6a',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../myclabs/deep-copy',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../myclabs/deep-copy',
           'aliases' => 
           array (
           ),
@@ -79,7 +79,7 @@ return [
           'version' => '5.6.2.0',
           'reference' => '3a454ca033b9e06b63282ce19562e892747449bb',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../nikic/php-parser',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../nikic/php-parser',
           'aliases' => 
           array (
           ),
@@ -91,7 +91,7 @@ return [
           'version' => '2.0.4.0',
           'reference' => '54750ef60c58e43759730615a392c31c80e23176',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../phar-io/manifest',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../phar-io/manifest',
           'aliases' => 
           array (
           ),
@@ -103,7 +103,7 @@ return [
           'version' => '3.2.1.0',
           'reference' => '4f7fd7836c6f332bb2933569e566a0d6c4cbed74',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../phar-io/version',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../phar-io/version',
           'aliases' => 
           array (
           ),
@@ -115,7 +115,7 @@ return [
           'version' => '1.12.32.0',
           'reference' => '2770dcdf5078d0b0d53f94317e06affe88419aa8',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../phpstan/phpstan',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../phpstan/phpstan',
           'aliases' => 
           array (
           ),
@@ -127,7 +127,7 @@ return [
           'version' => '10.1.16.0',
           'reference' => '7e308268858ed6baedc8704a304727d20bc07c77',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../phpunit/php-code-coverage',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../phpunit/php-code-coverage',
           'aliases' => 
           array (
           ),
@@ -139,7 +139,7 @@ return [
           'version' => '4.1.0.0',
           'reference' => 'a95037b6d9e608ba092da1b23931e537cadc3c3c',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../phpunit/php-file-iterator',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../phpunit/php-file-iterator',
           'aliases' => 
           array (
           ),
@@ -151,7 +151,7 @@ return [
           'version' => '4.0.0.0',
           'reference' => 'f5e568ba02fa5ba0ddd0f618391d5a9ea50b06d7',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../phpunit/php-invoker',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../phpunit/php-invoker',
           'aliases' => 
           array (
           ),
@@ -163,7 +163,7 @@ return [
           'version' => '3.0.1.0',
           'reference' => '0c7b06ff49e3d5072f057eb1fa59258bf287a748',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../phpunit/php-text-template',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../phpunit/php-text-template',
           'aliases' => 
           array (
           ),
@@ -175,7 +175,7 @@ return [
           'version' => '6.0.0.0',
           'reference' => 'e2a2d67966e740530f4a3343fe2e030ffdc1161d',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../phpunit/php-timer',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../phpunit/php-timer',
           'aliases' => 
           array (
           ),
@@ -187,7 +187,7 @@ return [
           'version' => '10.5.58.0',
           'reference' => 'e24fb46da450d8e6a5788670513c1af1424f16ca',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../phpunit/phpunit',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../phpunit/phpunit',
           'aliases' => 
           array (
           ),
@@ -199,7 +199,7 @@ return [
           'version' => '1.0.3.0',
           'reference' => 'bb5906edc1c324c9a05aa0873d40117941e5fa90',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../psr/http-client',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../psr/http-client',
           'aliases' => 
           array (
           ),
@@ -219,7 +219,7 @@ return [
           'version' => '1.1.0.0',
           'reference' => '2b4765fddfe3b508ac62f829e852b1501d3f6e8a',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../psr/http-factory',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../psr/http-factory',
           'aliases' => 
           array (
           ),
@@ -239,7 +239,7 @@ return [
           'version' => '2.0.0.0',
           'reference' => '402d35bcb92c70c026d1a6a9883f06b2ead23d71',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../psr/http-message',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../psr/http-message',
           'aliases' => 
           array (
           ),
@@ -259,7 +259,7 @@ return [
           'version' => '3.0.3.0',
           'reference' => '120b605dfeb996808c31b6477290a714d356e822',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../ralouphie/getallheaders',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../ralouphie/getallheaders',
           'aliases' => 
           array (
           ),
@@ -271,7 +271,7 @@ return [
           'version' => '2.0.1.0',
           'reference' => 'c34583b87e7b7a8055bf6c450c2c77ce32a24084',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/cli-parser',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/cli-parser',
           'aliases' => 
           array (
           ),
@@ -283,7 +283,7 @@ return [
           'version' => '2.0.0.0',
           'reference' => 'a81fee9eef0b7a76af11d121767abc44c104e503',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/code-unit',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/code-unit',
           'aliases' => 
           array (
           ),
@@ -295,7 +295,7 @@ return [
           'version' => '3.0.0.0',
           'reference' => '5e3a687f7d8ae33fb362c5c0743794bbb2420a1d',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/code-unit-reverse-lookup',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/code-unit-reverse-lookup',
           'aliases' => 
           array (
           ),
@@ -307,7 +307,7 @@ return [
           'version' => '5.0.4.0',
           'reference' => 'e8e53097718d2b53cfb2aa859b06a41abf58c62e',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/comparator',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/comparator',
           'aliases' => 
           array (
           ),
@@ -319,7 +319,7 @@ return [
           'version' => '3.2.0.0',
           'reference' => '68ff824baeae169ec9f2137158ee529584553799',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/complexity',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/complexity',
           'aliases' => 
           array (
           ),
@@ -331,7 +331,7 @@ return [
           'version' => '5.1.1.0',
           'reference' => 'c41e007b4b62af48218231d6c2275e4c9b975b2e',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/diff',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/diff',
           'aliases' => 
           array (
           ),
@@ -343,7 +343,7 @@ return [
           'version' => '6.1.0.0',
           'reference' => '8074dbcd93529b357029f5cc5058fd3e43666984',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/environment',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/environment',
           'aliases' => 
           array (
           ),
@@ -355,7 +355,7 @@ return [
           'version' => '5.1.4.0',
           'reference' => '0735b90f4da94969541dac1da743446e276defa6',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/exporter',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/exporter',
           'aliases' => 
           array (
           ),
@@ -367,7 +367,7 @@ return [
           'version' => '6.0.2.0',
           'reference' => '987bafff24ecc4c9ac418cab1145b96dd6e9cbd9',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/global-state',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/global-state',
           'aliases' => 
           array (
           ),
@@ -379,7 +379,7 @@ return [
           'version' => '2.0.2.0',
           'reference' => '856e7f6a75a84e339195d48c556f23be2ebf75d0',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/lines-of-code',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/lines-of-code',
           'aliases' => 
           array (
           ),
@@ -391,7 +391,7 @@ return [
           'version' => '5.0.0.0',
           'reference' => '202d0e344a580d7f7d04b3fafce6933e59dae906',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/object-enumerator',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/object-enumerator',
           'aliases' => 
           array (
           ),
@@ -403,7 +403,7 @@ return [
           'version' => '3.0.0.0',
           'reference' => '24ed13d98130f0e7122df55d06c5c4942a577957',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/object-reflector',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/object-reflector',
           'aliases' => 
           array (
           ),
@@ -415,7 +415,7 @@ return [
           'version' => '5.0.1.0',
           'reference' => '47e34210757a2f37a97dcd207d032e1b01e64c7a',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/recursion-context',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/recursion-context',
           'aliases' => 
           array (
           ),
@@ -427,7 +427,7 @@ return [
           'version' => '4.0.0.0',
           'reference' => '462699a16464c3944eefc02ebdd77882bd3925bf',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/type',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/type',
           'aliases' => 
           array (
           ),
@@ -439,7 +439,7 @@ return [
           'version' => '4.0.1.0',
           'reference' => 'c51fa83a5d8f43f1402e3f32a005e6262244ef17',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../sebastian/version',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../sebastian/version',
           'aliases' => 
           array (
           ),
@@ -451,7 +451,7 @@ return [
           'version' => '3.13.5.0',
           'reference' => '0ca86845ce43291e8f5692c7356fccf3bcf02bf4',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../squizlabs/php_codesniffer',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../squizlabs/php_codesniffer',
           'aliases' => 
           array (
           ),
@@ -463,7 +463,7 @@ return [
           'version' => '3.6.0.0',
           'reference' => '63afe740e99a13ba87ec199bb07bbdee937a5b62',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../symfony/deprecation-contracts',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../symfony/deprecation-contracts',
           'aliases' => 
           array (
           ),
@@ -475,7 +475,7 @@ return [
           'version' => '1.3.1.0',
           'reference' => 'b7489ce515e168639d17feec34b8847c326b0b3c',
           'type' => 'library',
-          'install_path' => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/composer/../theseer/tokenizer',
+          'install_path' => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/composer/../theseer/tokenizer',
           'aliases' => 
           array (
           ),
@@ -486,65 +486,77 @@ return [
   ),
   'executedFilesHashes' => 
   array (
-    'phar:///Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/phpstan/phpstan/phpstan.phar/stubs/runtime/Attribute.php' => 'eaf9127f074e9c7ebc65043ec4050f9fed60c2bb',
-    'phar:///Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/phpstan/phpstan/phpstan.phar/stubs/runtime/ReflectionAttribute.php' => '0b4b78277eb6545955d2ce5e09bff28f1f8052c8',
-    'phar:///Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/phpstan/phpstan/phpstan.phar/stubs/runtime/ReflectionIntersectionType.php' => 'a3e6299b87ee5d407dae7651758edfa11a74cb11',
-    'phar:///Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/vendor/phpstan/phpstan/phpstan.phar/stubs/runtime/ReflectionUnionType.php' => '1b349aa997a834faeafe05fa21bc31cae22bf2e2',
+    'phar:///Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/phpstan/phpstan/phpstan.phar/stubs/runtime/Attribute.php' => 'eaf9127f074e9c7ebc65043ec4050f9fed60c2bb',
+    'phar:///Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/phpstan/phpstan/phpstan.phar/stubs/runtime/ReflectionAttribute.php' => '0b4b78277eb6545955d2ce5e09bff28f1f8052c8',
+    'phar:///Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/phpstan/phpstan/phpstan.phar/stubs/runtime/ReflectionIntersectionType.php' => 'a3e6299b87ee5d407dae7651758edfa11a74cb11',
+    'phar:///Users/m1/Documents/Gitlab/datafabric-sdk-php/vendor/phpstan/phpstan/phpstan.phar/stubs/runtime/ReflectionUnionType.php' => '1b349aa997a834faeafe05fa21bc31cae22bf2e2',
   ),
   'phpExtensions' => 
   array (
     0 => 'Core',
-    1 => 'PDO',
-    2 => 'Phar',
-    3 => 'Reflection',
-    4 => 'SPL',
-    5 => 'SimpleXML',
-    6 => 'bcmath',
-    7 => 'bz2',
-    8 => 'calendar',
-    9 => 'ctype',
-    10 => 'curl',
-    11 => 'date',
-    12 => 'dom',
-    13 => 'exif',
-    14 => 'fileinfo',
-    15 => 'filter',
-    16 => 'ftp',
-    17 => 'gd',
-    18 => 'gettext',
-    19 => 'hash',
-    20 => 'iconv',
-    21 => 'imap',
-    22 => 'intl',
-    23 => 'json',
-    24 => 'ldap',
-    25 => 'libxml',
-    26 => 'mbstring',
-    27 => 'mysqli',
-    28 => 'mysqlnd',
-    29 => 'openssl',
-    30 => 'pcntl',
-    31 => 'pcre',
-    32 => 'pdo_mysql',
-    33 => 'pdo_pgsql',
-    34 => 'pdo_sqlite',
-    35 => 'pgsql',
-    36 => 'posix',
-    37 => 'random',
-    38 => 'readline',
-    39 => 'session',
-    40 => 'soap',
-    41 => 'sockets',
-    42 => 'sodium',
-    43 => 'sqlite3',
-    44 => 'standard',
-    45 => 'tokenizer',
-    46 => 'xml',
-    47 => 'xmlreader',
-    48 => 'xmlwriter',
-    49 => 'xsl',
-    50 => 'zip',
-    51 => 'zlib',
+    1 => 'FFI',
+    2 => 'PDO',
+    3 => 'PDO_ODBC',
+    4 => 'Phar',
+    5 => 'Reflection',
+    6 => 'SPL',
+    7 => 'SimpleXML',
+    8 => 'Zend OPcache',
+    9 => 'bcmath',
+    10 => 'bz2',
+    11 => 'calendar',
+    12 => 'ctype',
+    13 => 'curl',
+    14 => 'date',
+    15 => 'dba',
+    16 => 'dom',
+    17 => 'exif',
+    18 => 'fileinfo',
+    19 => 'filter',
+    20 => 'ftp',
+    21 => 'gd',
+    22 => 'gettext',
+    23 => 'gmp',
+    24 => 'hash',
+    25 => 'iconv',
+    26 => 'json',
+    27 => 'ldap',
+    28 => 'libxml',
+    29 => 'mbstring',
+    30 => 'mongodb',
+    31 => 'mysqli',
+    32 => 'mysqlnd',
+    33 => 'odbc',
+    34 => 'openssl',
+    35 => 'pcntl',
+    36 => 'pcre',
+    37 => 'pdo_dblib',
+    38 => 'pdo_mysql',
+    39 => 'pdo_pgsql',
+    40 => 'pdo_sqlite',
+    41 => 'pgsql',
+    42 => 'posix',
+    43 => 'random',
+    44 => 'readline',
+    45 => 'session',
+    46 => 'shmop',
+    47 => 'snmp',
+    48 => 'soap',
+    49 => 'sockets',
+    50 => 'sodium',
+    51 => 'sqlite3',
+    52 => 'standard',
+    53 => 'sysvmsg',
+    54 => 'sysvsem',
+    55 => 'sysvshm',
+    56 => 'tidy',
+    57 => 'tokenizer',
+    58 => 'xml',
+    59 => 'xmlreader',
+    60 => 'xmlwriter',
+    61 => 'xsl',
+    62 => 'zip',
+    63 => 'zlib',
   ),
   'stubFiles' => 
   array (
@@ -564,57 +576,73 @@ return [
 	'collectedDataCallback' => static function (): array { return array (
 ); },
 	'dependencies' => array (
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycCheckListResponse.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycCheckListResponse.php' => 
   array (
-    'fileHash' => '76bae4935468597e4042794de621f0da7b2cef79',
+    'fileHash' => '4f26a7235df32d31b5fa973b5719044a6afd44a6',
     'dependentFiles' => 
     array (
-      0 => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycClient.php',
+      0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php',
     ),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycCheckResponse.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycCheckResponse.php' => 
   array (
-    'fileHash' => '30072b122d915d6231719d7b8999749de2eb2d35',
+    'fileHash' => 'a50ba363a3155777f582e4ffed2df579b0b71967',
     'dependentFiles' => 
     array (
-      0 => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycCheckListResponse.php',
-      1 => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycClient.php',
+      0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycCheckListResponse.php',
+      1 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php',
     ),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycClient.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php' => 
   array (
-    'fileHash' => '4ef9335ade850e81d06c0ae41784cc65d1febe59',
+    'fileHash' => '836be2d20d1b0f0a40f4441a6663daaf554f5fd4',
     'dependentFiles' => 
     array (
-      0 => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/tests/KycClientTest.php',
+      0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/KycClientTest.php',
     ),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycException.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycDocumentListResponse.php' => 
   array (
-    'fileHash' => '84ff338a92b15ed3197c6a795648f6bf1c55bca1',
+    'fileHash' => '119cffa4a62e365556dc9ea029ff586523b27ddb',
     'dependentFiles' => 
     array (
-      0 => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycClient.php',
+      0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php',
     ),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/tests/BaseTestCase.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycDocumentResponse.php' => 
+  array (
+    'fileHash' => '23c5bb3ce02954b56b235d3cd4357e7a994a4349',
+    'dependentFiles' => 
+    array (
+      0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php',
+    ),
+  ),
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycException.php' => 
+  array (
+    'fileHash' => '44f99467ae6100d7183c1e05de8687b5500616a9',
+    'dependentFiles' => 
+    array (
+      0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php',
+    ),
+  ),
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/BaseTestCase.php' => 
   array (
     'fileHash' => 'e922067c6d927a1c4d571022644eccfcc98efec0',
     'dependentFiles' => 
     array (
-      0 => '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/tests/KycClientTest.php',
+      0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/KycClientTest.php',
     ),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/tests/KycClientTest.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/KycClientTest.php' => 
   array (
-    'fileHash' => 'dd7d64a323c6c24b1ca2a1dd024b09e82cb231aa',
+    'fileHash' => 'd8769eb28c1f77369f5f1dd12971991840dc9d52',
     'dependentFiles' => 
     array (
     ),
   ),
 ),
 	'exportedNodesCallback' => static function (): array { return array (
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycCheckListResponse.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycCheckListResponse.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -623,9 +651,9 @@ return [
       \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
          'phpDocString' => '/**
  * KYC Check List Response
- * 
+ *
  * Represents a paginated list of KYC checks from the API
- * 
+ *
  * @package DataFabric\\SDK
  */',
          'namespace' => 'DataFabric\\SDK',
@@ -656,7 +684,17 @@ return [
           array (
             0 => 'data',
           ),
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @var array<mixed> */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'type' => 'array',
            'public' => false,
            'private' => false,
@@ -672,7 +710,17 @@ return [
           array (
             0 => 'pagination',
           ),
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @var array<string, mixed> */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'type' => 'array',
            'public' => false,
            'private' => false,
@@ -689,8 +737,8 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Constructor
-     * 
-     * @param array $response Raw response data from API
+     *
+     * @param array<string, mixed> $response Raw response data from API
      */',
              'namespace' => 'DataFabric\\SDK',
              'uses' => 
@@ -732,7 +780,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get array of KYC check responses
-     * 
+     *
      * @return KycCheckResponse[]
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -764,7 +812,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get total number of checks
-     * 
+     *
      * @return int
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -796,7 +844,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get number of checks per page
-     * 
+     *
      * @return int
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -828,7 +876,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get current page number
-     * 
+     *
      * @return int
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -860,7 +908,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get last page number
-     * 
+     *
      * @return int
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -892,7 +940,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Check if there are more pages available
-     * 
+     *
      * @return bool
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -924,8 +972,8 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get raw data array
-     * 
-     * @return array
+     *
+     * @return array<mixed>
      */',
              'namespace' => 'DataFabric\\SDK',
              'uses' => 
@@ -955,7 +1003,7 @@ return [
       ),
     )),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycCheckResponse.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycCheckResponse.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -964,9 +1012,9 @@ return [
       \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
          'phpDocString' => '/**
  * KYC Check Response
- * 
+ *
  * Represents a single KYC check response from the API
- * 
+ *
  * @package DataFabric\\SDK
  */',
          'namespace' => 'DataFabric\\SDK',
@@ -997,7 +1045,17 @@ return [
           array (
             0 => 'data',
           ),
-           'phpDoc' => NULL,
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @var array<string, mixed> */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
            'type' => 'array',
            'public' => false,
            'private' => false,
@@ -1014,8 +1072,8 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Constructor
-     * 
-     * @param array $data Raw response data from API
+     *
+     * @param array<string, mixed> $data Raw response data from API
      */',
              'namespace' => 'DataFabric\\SDK',
              'uses' => 
@@ -1057,7 +1115,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get the check ID
-     * 
+     *
      * @return string
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1089,7 +1147,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get the check status
-     * 
+     *
      * @return string pending|in_progress|completed|failed
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1121,7 +1179,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get the verification result
-     * 
+     *
      * @return string|null approved|rejected|review_required
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1153,7 +1211,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get the risk score
-     * 
+     *
      * @return string|null low|medium|high
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1185,8 +1243,8 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get verification details
-     * 
-     * @return array
+     *
+     * @return array<string, mixed>
      */',
              'namespace' => 'DataFabric\\SDK',
              'uses' => 
@@ -1217,7 +1275,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Check if the verification was approved
-     * 
+     *
      * @return bool
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1249,7 +1307,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Check if the verification was rejected
-     * 
+     *
      * @return bool
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1281,7 +1339,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Check if the verification requires manual review
-     * 
+     *
      * @return bool
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1313,7 +1371,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Check if the verification is pending
-     * 
+     *
      * @return bool
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1345,7 +1403,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Check if the verification is completed
-     * 
+     *
      * @return bool
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1377,7 +1435,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get the request ID for debugging
-     * 
+     *
      * @return string|null
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1404,13 +1462,13 @@ return [
         )),
         13 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getRawData',
+           'name' => 'getExpiresAt',
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * Get raw response data
-     * 
-     * @return array
+     * Get the expiration date/time
+     *
+     * @return string|null ISO 8601 format datetime
      */',
              'namespace' => 'DataFabric\\SDK',
              'uses' => 
@@ -1426,7 +1484,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => 'array',
+           'returnType' => '?string',
            'parameters' => 
           array (
           ),
@@ -1436,13 +1494,45 @@ return [
         )),
         14 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'toArray',
+           'name' => 'isExpired',
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
-     * Convert response to array
-     * 
-     * @return array
+     * Check if the verification has expired
+     *
+     * @return bool
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        15 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getRawData',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get raw response data
+     *
+     * @return array<string, mixed>
      */',
              'namespace' => 'DataFabric\\SDK',
              'uses' => 
@@ -1466,14 +1556,46 @@ return [
           array (
           ),
         )),
-        15 => 
+        16 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'toArray',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Convert response to array
+     *
+     * @return array<string, mixed>
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        17 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'toJson',
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Convert response to JSON string
-     * 
+     *
      * @return string
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1504,7 +1626,7 @@ return [
       ),
     )),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycClient.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -1513,9 +1635,9 @@ return [
       \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
          'phpDocString' => '/**
  * DataFabric KYC SDK
- * 
+ *
  * Provides easy integration with the DataFabric KYC API
- * 
+ *
  * @package DataFabric\\SDK
  * @version 1.0.0
  */',
@@ -1664,10 +1786,10 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Constructor
-     * 
+     *
      * @param string $apiKey Your DataFabric API key (dfb_test_* or dfb_live_*)
      * @param string $baseUrl Base URL for API (default: https://datafabric.hiroshiaki.com)
-     * @param array $options Additional Guzzle client options
+     * @param array<string, mixed> $options Additional Guzzle client options
      */',
              'namespace' => 'DataFabric\\SDK',
              'uses' => 
@@ -1733,8 +1855,8 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Create a new KYC check
-     * 
-     * @param array $data KYC check data
+     *
+     * @param array<string, mixed> $data KYC check data
      * @return KycCheckResponse
      * @throws KycException
      */',
@@ -1780,7 +1902,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get KYC check status
-     * 
+     *
      * @param string $checkId The check ID
      * @return KycCheckResponse
      * @throws KycException
@@ -1827,8 +1949,8 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * List KYC checks with optional filters
-     * 
-     * @param array $filters Optional filters (status, result, user_reference, per_page)
+     *
+     * @param array<string, mixed> $filters Optional filters (status, result, user_reference, per_page)
      * @return KycCheckListResponse
      * @throws KycException
      */',
@@ -1874,7 +1996,7 @@ return [
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Reprocess a failed KYC check
-     * 
+     *
      * @param string $checkId The check ID
      * @return KycCheckResponse
      * @throws KycException
@@ -1916,13 +2038,143 @@ return [
         )),
         11 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'uploadDocument',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Upload document image with AI OCR extraction
+     *
+     * @param string $checkId The check ID
+     * @param string $imagePath Path to the image file
+     * @param string $imageType Image type: front|back|selfie|proof_of_address
+     * @param bool $autoExtract Enable AI OCR extraction (default: true)
+     * @return KycDocumentResponse
+     * @throws KycException
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+              'client' => 'GuzzleHttp\\Client',
+              'guzzleexception' => 'GuzzleHttp\\Exception\\GuzzleException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'DataFabric\\SDK\\KycDocumentResponse',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'checkId',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'imagePath',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            2 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'imageType',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            3 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'autoExtract',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        12 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getDocuments',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get all documents for a KYC check
+     *
+     * @param string $checkId The check ID
+     * @return KycDocumentListResponse
+     * @throws KycException
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+              'client' => 'GuzzleHttp\\Client',
+              'guzzleexception' => 'GuzzleHttp\\Exception\\GuzzleException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'DataFabric\\SDK\\KycDocumentListResponse',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'checkId',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        13 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'validateCheckData',
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Validate check data before sending
-     * 
-     * @param array $data
+     *
+     * @param array<string, mixed> $data
      * @throws KycException
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1960,14 +2212,72 @@ return [
           array (
           ),
         )),
-        12 => 
+        14 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'validateDocumentUpload',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Validate document upload parameters
+     *
+     * @param string $imagePath Path to the image file
+     * @param string $imageType Image type
+     * @throws KycException
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+              'client' => 'GuzzleHttp\\Client',
+              'guzzleexception' => 'GuzzleHttp\\Exception\\GuzzleException',
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => false,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'imagePath',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'imageType',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        15 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'isTestMode',
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Check if SDK is in test mode
-     * 
+     *
      * @return bool
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -1994,14 +2304,14 @@ return [
           array (
           ),
         )),
-        13 => 
+        16 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getBaseUrl',
            'phpDoc' => 
           \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
              'phpDocString' => '/**
      * Get the base URL
-     * 
+     *
      * @return string
      */',
              'namespace' => 'DataFabric\\SDK',
@@ -2034,7 +2344,1041 @@ return [
       ),
     )),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/src/KycException.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycDocumentListResponse.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'DataFabric\\SDK\\KycDocumentListResponse',
+       'phpDoc' => 
+      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+         'phpDocString' => '/**
+ * KYC Document List Response
+ *
+ * Represents a list of documents for a KYC check
+ *
+ * @package DataFabric\\SDK
+ */',
+         'namespace' => 'DataFabric\\SDK',
+         'uses' => 
+        array (
+        ),
+         'constUses' => 
+        array (
+        ),
+      )),
+       'abstract' => false,
+       'final' => false,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
+           'names' => 
+          array (
+            0 => 'data',
+          ),
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @var array<mixed> */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'type' => 'array',
+           'public' => false,
+           'private' => false,
+           'static' => false,
+           'readonly' => false,
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => '__construct',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Constructor
+     *
+     * @param array<string, mixed> $response Raw response data from API
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'response',
+               'type' => 'array',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getDocuments',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get array of document responses
+     *
+     * @return array<string, mixed>[]
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getCount',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get total number of documents
+     *
+     * @return int
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'int',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'hasOcrData',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Check if any documents have OCR data
+     *
+     * @return bool
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getDocumentsByType',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get documents by image type
+     *
+     * @param string $imageType front|back|selfie|proof_of_address
+     * @return array<string, mixed>[]
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'imageType',
+               'type' => 'string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        6 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getRawData',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get raw data array
+     *
+     * @return array<mixed>
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycDocumentResponse.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'DataFabric\\SDK\\KycDocumentResponse',
+       'phpDoc' => 
+      \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+         'phpDocString' => '/**
+ * KYC Document Response
+ *
+ * Represents a document upload response with AI OCR data
+ *
+ * @package DataFabric\\SDK
+ */',
+         'namespace' => 'DataFabric\\SDK',
+         'uses' => 
+        array (
+        ),
+         'constUses' => 
+        array (
+        ),
+      )),
+       'abstract' => false,
+       'final' => false,
+       'extends' => NULL,
+       'implements' => 
+      array (
+      ),
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedPropertiesNode::__set_state(array(
+           'names' => 
+          array (
+            0 => 'data',
+          ),
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/** @var array<string, mixed> */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'type' => 'array',
+           'public' => false,
+           'private' => false,
+           'static' => false,
+           'readonly' => false,
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => '__construct',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Constructor
+     *
+     * @param array<string, mixed> $data Raw response data from API
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => NULL,
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'data',
+               'type' => 'array',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getId',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the document ID
+     *
+     * @return int|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?int',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getImageType',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the image type
+     *
+     * @return string|null front|back|selfie|proof_of_address
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'hasOcrData',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Check if document has OCR data
+     *
+     * @return bool
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getOcrData',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get OCR extracted data
+     *
+     * @return array<string, mixed>|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        6 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getExtractedDocumentType',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get extracted document type from OCR
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        7 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getExtractedFullName',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get extracted full name from OCR
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        8 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getExtractedFirstName',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get extracted first name from OCR
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        9 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getExtractedLastName',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get extracted last name from OCR
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        10 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getExtractedIdNumber',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get extracted ID/document number from OCR
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        11 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getExtractedDateOfBirth',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get extracted date of birth from OCR
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        12 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getExtractedGender',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get extracted gender from OCR
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        13 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getExtractedNationality',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get extracted nationality from OCR
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        14 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getExtractedAddress',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get extracted address from OCR
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        15 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getConfidence',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get OCR confidence score
+     *
+     * @return int|null Confidence score (0-100)
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?int',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        16 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getProvider',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get OCR provider name
+     *
+     * @return string|null
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        17 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getStatus',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get the status
+     *
+     * @return string
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        18 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'isSuccessful',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Check if upload was successful
+     *
+     * @return bool
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        19 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getRawData',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Get raw response data
+     *
+     * @return array<string, mixed>
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        20 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'toArray',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Convert response to array
+     *
+     * @return array<string, mixed>
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'array',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        21 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'toJson',
+           'phpDoc' => 
+          \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
+             'phpDocString' => '/**
+     * Convert response to JSON string
+     *
+     * @return string
+     */',
+             'namespace' => 'DataFabric\\SDK',
+             'uses' => 
+            array (
+            ),
+             'constUses' => 
+            array (
+            ),
+          )),
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycException.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -2043,9 +3387,9 @@ return [
       \PHPStan\Dependency\ExportedNode\ExportedPhpDocNode::__set_state(array(
          'phpDocString' => '/**
  * KYC Exception
- * 
+ *
  * Custom exception for DataFabric SDK errors
- * 
+ *
  * @package DataFabric\\SDK
  */',
          'namespace' => 'DataFabric\\SDK',
@@ -2077,7 +3421,7 @@ return [
       ),
     )),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/tests/BaseTestCase.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/BaseTestCase.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
@@ -2152,7 +3496,7 @@ return [
       ),
     )),
   ),
-  '/Users/rahmanazhar/Documents/Laravel/datafabric-sdk-php/tests/KycClientTest.php' => 
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/KycClientTest.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(

@@ -141,6 +141,38 @@ class KycCheckResponse
     }
 
     /**
+     * Get the expiration date/time
+     *
+     * @return string|null ISO 8601 format datetime
+     */
+    public function getExpiresAt(): ?string
+    {
+        $expiresAt = $this->data['expires_at'] ?? null;
+        return is_string($expiresAt) ? $expiresAt : null;
+    }
+
+    /**
+     * Check if the verification has expired
+     *
+     * @return bool
+     */
+    public function isExpired(): bool
+    {
+        $expiresAt = $this->getExpiresAt();
+        if ($expiresAt === null) {
+            return false;
+        }
+
+        try {
+            $expiryDate = new \DateTime($expiresAt);
+            $now = new \DateTime();
+            return $now > $expiryDate;
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
+    /**
      * Get raw response data
      *
      * @return array<string, mixed>

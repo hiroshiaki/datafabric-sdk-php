@@ -97,7 +97,41 @@ if ($response->isCompleted()) {
 }
 ```
 
-### 4. List Your Checks
+### 4. Upload Documents with AI OCR
+
+```php
+// Upload document with AI-powered data extraction
+$documentResponse = $client->uploadDocument(
+    $checkId,
+    '/path/to/id-card-front.jpg',
+    'front',  // Image type: front|back|selfie|proof_of_address
+    true      // Enable AI OCR (default: true)
+);
+
+// Access AI-extracted data
+if ($documentResponse->hasOcrData()) {
+    echo "✨ AI Extracted Data:\n";
+    echo "Full Name: " . $documentResponse->getExtractedFullName() . "\n";
+    echo "ID Number: " . $documentResponse->getExtractedIdNumber() . "\n";
+    echo "Date of Birth: " . $documentResponse->getExtractedDateOfBirth() . "\n";
+    echo "Nationality: " . $documentResponse->getExtractedNationality() . "\n";
+    echo "Confidence: " . $documentResponse->getConfidence() . "%\n";
+}
+```
+
+**Supported Documents:**
+- Malaysian IC (MyKad)
+- Passports
+- Driver's Licenses
+- National IDs
+- Residence Permits
+
+**Image Requirements:**
+- Formats: JPEG, PNG, WebP
+- Max size: 10MB
+- Recommended: Min 1000px width for best OCR accuracy
+
+### 5. List Your Checks
 
 ```php
 // Get all checks

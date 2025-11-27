@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **AI-Powered OCR**: Document upload with automatic data extraction using AI models (GPT-4o Vision, Gemini 2.0 Flash, Claude 3 Opus)
+- `uploadDocument()` method for uploading ID cards, passports, and driver's licenses with AI OCR
+- `getDocuments()` method to retrieve all uploaded documents for a KYC check
+- New response classes: `KycDocumentResponse` and `KycDocumentListResponse`
+- Comprehensive OCR data accessors for extracted fields (name, ID number, date of birth, nationality, etc.)
+- Document validation (file type, size, format checks)
+- Support for multiple image types: front, back, selfie, proof_of_address
+- Image format validation (JPEG, PNG, WebP, max 10MB)
+- `getExpiresAt()` and `isExpired()` methods in `KycCheckResponse`
+- New example file: `examples/upload-document.php` demonstrating AI OCR features
+- Enhanced README with AI OCR documentation and best practices
+
+### Changed
+- Updated README with comprehensive AI OCR documentation
+- Expanded best practices section with document upload guidelines
+- Enhanced Quick Start example to include document upload
+- Updated response object documentation to include new OCR fields
+
 ## [1.0.0] - 2025-11-26
 
 ### Added
