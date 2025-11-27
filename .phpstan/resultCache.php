@@ -592,11 +592,12 @@ return [
       0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycCheckListResponse.php',
       1 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php',
       2 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/KycCheckResponseTest.php',
+      3 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/test_actual_api_response.php',
     ),
   ),
   '/Users/m1/Documents/Gitlab/datafabric-sdk-php/src/KycClient.php' => 
   array (
-    'fileHash' => '143a0e965ce074671be30497a6e7a4ea818ad8d3',
+    'fileHash' => '83d637af271f9aeb5bf3635c7ae495f41673430b',
     'dependentFiles' => 
     array (
       0 => '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/KycClientTest.php',
@@ -637,7 +638,7 @@ return [
   ),
   '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/KycCheckResponseTest.php' => 
   array (
-    'fileHash' => '420f210de34c0fd51fa8d77fe0025e90cc4770a9',
+    'fileHash' => 'e351895d357209be1b069dd4fbd5b18861204aeb',
     'dependentFiles' => 
     array (
     ),
@@ -645,6 +646,13 @@ return [
   '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/KycClientTest.php' => 
   array (
     'fileHash' => 'd8769eb28c1f77369f5f1dd12971991840dc9d52',
+    'dependentFiles' => 
+    array (
+    ),
+  ),
+  '/Users/m1/Documents/Gitlab/datafabric-sdk-php/tests/test_actual_api_response.php' => 
+  array (
+    'fileHash' => '94d1cc64c15fa365aa56b202e62505c2f277e182',
     'dependentFiles' => 
     array (
     ),
@@ -3952,6 +3960,42 @@ return [
         21 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'testToJson',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        22 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'testWrappedResponseWithDataField',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'void',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        23 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'testDirectResponseWithoutDataField',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,

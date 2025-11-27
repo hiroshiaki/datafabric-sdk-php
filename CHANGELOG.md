@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - **Critical**: Added `extractResponseData()` helper to handle both wrapped and direct API response formats
+- **Critical**: `uploadDocument()` now sends boolean values as '1'/'0' instead of 'true'/'false' in multipart form data
 - `getCheckId()` now correctly handles responses with `check_id` or `id` fields
 - Support for both string and integer ID formats from API responses
 - All API methods now properly extract data from wrapped responses: `{"status": "success", "data": {...}}`

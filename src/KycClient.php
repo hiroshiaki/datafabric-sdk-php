@@ -211,7 +211,7 @@ class KycClient
                     ],
                     [
                         'name' => 'auto_extract',
-                        'contents' => $autoExtract ? 'true' : 'false',
+                        'contents' => $autoExtract ? '1' : '0',
                     ],
                 ],
             ]);
