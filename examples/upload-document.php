@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DataFabric SDK - Upload Document with AI OCR Example
+ * DataFabric SDK - Upload Document with AI OCR Example V1.0.0
  *
  * This example demonstrates how to upload document images with AI-powered OCR extraction.
  * The API will automatically extract structured data from ID cards, passports, and driver's licenses.
